@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TallerBT.BT
+namespace BehaviourTree
 {
     public abstract class Composite : Node
     {
-        protected List<Node> Children = new List<Node>();
+        protected List<Node> children = new List<Node>();
 
-        public void AddChild(Node child)
+        public void AddChild(Node node)
         {
-            if (child is Root)
+            if (node is Root)
                 throw new InvalidOperationException("Composite no puede tener Root como hijo.");
-
-            Children.Add(child);
+            children.Add(node);
         }
     }
 }
